@@ -51,36 +51,84 @@
             <h3>But what does that mean?</h3>
           </section>
           <section id="features">
-            
+            <h3>It means:</h3>
+            <ul>
+              <li>You can leverage the power and scalability of Erlang, all with a familiar Ruby Syntax</li>
+              <li>You can have Jupyter style notebooks with LiveBook</li>
+              <li>You can run hundreds or thousands of concurrent, isolated processes</li>
+              <li>You can build Full Stack Web Apps which focus on lightweight connection first</li>
+            </ul>
           </section>
         </section>
         <section data-auto-animate id="how-start">
-          
+          <h2>Sounds Great! How do I start?</h2>
+          <h3>
+            Download Elixir by going to <br/>
+            <a href="https://elixir-lang.org/install">https://elixir-lang.org/install</a> <br/>
+            and following along with your OS's instructions.
+          </h3>
         </section>
         <section data-auto-animate id="now-code">
           <section data-markdown id="code-start">
+            ## Now to get into code!
+            ### Simply run `iex` to open the interactive elixir shell
+            ### Then You can run some code like: `:math.pow(2,4) == 4 ** 2`
           </section>
-          <section id="grey-screen">
+          <section data-markdown id="grey-screen">
+            ## This shows one of the most powerful features of Elixir:
+            ### The ability to use any Erlang module, because Elixir compiles to Erlang!
           </section>
         </section>
         <section data-auto-animate id="how-code">
-          <section data-markdown id="add-cube">
+          <section data-markdown id="laying-some-pipes">
+            ## Let's try one more:
+            `a = [1,2,3,4,5,6]`
+
+            `a |> Enum.reduce(fn (a, b) -> a + b end)`
+            ### That's cool, we just used a pipe, feeding the return of the previous function (accessing a variable) as the first argument of the next function
+            #### We could also write:
+             `Enum.reduce(a, fn (a, b) -> a + b end)`
           </section>
-          <section id="see-add">
+          <section data-markdown id="poly-morphi-what">
+            ## We can do a little better though:
+            ```
+            defmodule Example do
+              def square_evens_half_odds(n) when rem(n,2) == 0, do: n ** 2
+              def square_evens_half_odds(n), do: n / 2
+              def square_reduction(a, b), do: (a |> square_evens_half_odds()) + b
+            end
+            ```
+            ```
+              a |> Enum.reduce(&Example.square_reduction/2)
+            ```
+            ### Here you can see that we can pass a function as a parameter!
           </section>
         </section>
-        <section id="Inheritance_Good" data-auto-animate>
-          <section id="Entities">
+        <section id="More-examples" data-auto-animate>
+          <section data-markdown id="patterns">
+            ## one last example
+            ```
+            defmodule Pats do
+              def get_inp("\nq", acc) do
+                IO.puts(acc)
+              end
+              def get_inp("\n" <> i, acc) do
+                
+                IO.gets(">") |> String.reverse() |> get_inp(acc <> (i |> String.reverse()))
+              end
+              def start_prompt(), do: IO.gets(">") |> String.reverse() |> get_inp("")
+            end
+            Pats.start_prompt
+            ```
+            ### Pattern matching allows you to handle each case the way you want!
           </section>
-          <section id="Update_cubert" data-auto-animate>
-          </section>
-        </section>
-        <section id="Understanding_Update" data-auto-animate>
-          </section>
-          <section data-auto-animate data-markdown id="fixed">
         </section>
         <section>
           <h4>Let dive into some actual examples!</h4>
+          <code>mix new example_project</code>
+        </section>
+        <section data-markdown>
+          # THANK YOU!!
         </section>
       </div>
     </div>
