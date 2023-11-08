@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="Reveal/dist/reset.css" />
+    <link rel="stylesheet" href="Reveal/dist/reveal.css" />
+    <link rel="stylesheet" href="Reveal/dist/theme/league.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="Reveal/plugin/highlight/monokai.css" />
+
+    <link rel="stylesheet" href="Reveal/custom/css/custom.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="welcome" data-auto-animate>
+          <h3>Elixir: Functional without the Frustration</h3>
+          <img
+            src="Reveal/custom/img/stylized_logo.png"
+            alt="A drop of purple smoke, as a stylized Elixir Logo"
+            class="r-stretch"
+          />
+          <p>
+            <a href="https://github.com/SeraphDev6/ElixirTalk"
+              >https://github.com/SeraphDev6/ElixirTalk</a
+            >
+          </p>
+        </section>
+
+        <section id="what-is-what-do" data-auto-animate>
+          <section id="what-is">
+            <h3>what is Elixir?</h3>
+            <div class="r-stretch align-center">
+              <img src="Reveal/custom/img/logo.png" alt="Elixir Logo" />
+            </div>
+            <p>
+              To quote the Elixir website:<br/>
+              Elixir is a dynamic, functional language for building scalable and maintainable applications.
+            </p>
+          </section>
+          <section id="what-do">
+            <h2>Sounds Great!</h2>
+            <h3>But what does that mean?</h3>
+          </section>
+          <section id="features">
+            
+          </section>
+        </section>
+        <section data-auto-animate id="how-start">
+          
+        </section>
+        <section data-auto-animate id="now-code">
+          <section data-markdown id="code-start">
+          </section>
+          <section id="grey-screen">
+          </section>
+        </section>
+        <section data-auto-animate id="how-code">
+          <section data-markdown id="add-cube">
+          </section>
+          <section id="see-add">
+          </section>
+        </section>
+        <section id="Inheritance_Good" data-auto-animate>
+          <section id="Entities">
+          </section>
+          <section id="Update_cubert" data-auto-animate>
+          </section>
+        </section>
+        <section id="Understanding_Update" data-auto-animate>
+          </section>
+          <section data-auto-animate data-markdown id="fixed">
+        </section>
+        <section>
+          <h4>Let dive into some actual examples!</h4>
+        </section>
+      </div>
+    </div>
+
+    <script src="Reveal/dist/reveal.js"></script>
+    <script src="Reveal/plugin/notes/notes.js"></script>
+    <script src="Reveal/plugin/markdown/markdown.js"></script>
+    <script src="Reveal/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // navigationMode: "grid",
+        highlight: {
+          beforeHighlight: (hljs) => hljs.configure({ languages: ["elixir"] }),
+        },
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
